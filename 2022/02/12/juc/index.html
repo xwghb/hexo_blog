@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>juc - xiaow的博客</title><link rel="manifest" href="/hexo_blog/manifest.json"><meta name="application-name" content="xiaow的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="xiaow的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="JUC进程与线程  并行与并发并行（parrallel）：真正同时运行多个任务 并发（current）：同一时间应对多个任务，处理多个任务是轮流的，实际上还是串行的，每个进程轮流占据时间片，使用cpu，时间片很小，人对此无感 一般都是既有并行又有并发 异步调用 需要等待结果返回再进行，同步 不需要等待结果返回再进行，异步  小结 线程创建 Thread  1234567Thread thread&amp;#x3D;"><meta property="og:type" content="blog"><meta property="og:title" content="juc"><meta property="og:url" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/"><meta property="og:site_name" content="xiaow的博客"><meta property="og:description" content="JUC进程与线程  并行与并发并行（parrallel）：真正同时运行多个任务 并发（current）：同一时间应对多个任务，处理多个任务是轮流的，实际上还是串行的，每个进程轮流占据时间片，使用cpu，时间片很小，人对此无感 一般都是既有并行又有并发 异步调用 需要等待结果返回再进行，同步 不需要等待结果返回再进行，异步  小结 线程创建 Thread  1234567Thread thread&amp;#x3D;"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220212220225601.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220212220529133.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220214111211433.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220215121413043.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218163810518.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218165233636.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218170626624.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220219160241895.png"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220219161728147.png"><meta property="article:published_time" content="2022-02-12T13:37:53.000Z"><meta property="article:modified_time" content="2022-02-19T08:59:09.190Z"><meta property="article:author" content="xiaow"><meta property="article:tag" content="java,python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/hexo_blog/2022/02/12/juc/image-20220212220225601.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/"},"headline":"juc","image":["https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220212220225601.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220212220529133.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220214111211433.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220215121413043.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218163810518.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218165233636.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220218170626624.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220219160241895.png","https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/image-20220219161728147.png"],"datePublished":"2022-02-12T13:37:53.000Z","dateModified":"2022-02-19T08:59:09.190Z","author":{"@type":"Person","name":"xiaow"},"publisher":{"@type":"Organization","name":"xiaow的博客","logo":{"@type":"ImageObject","url":"https://xiaow123.gitee.io/img/logo.svg"}},"description":"JUC进程与线程  并行与并发并行（parrallel）：真正同时运行多个任务 并发（current）：同一时间应对多个任务，处理多个任务是轮流的，实际上还是串行的，每个进程轮流占据时间片，使用cpu，时间片很小，人对此无感 一般都是既有并行又有并发 异步调用 需要等待结果返回再进行，同步 不需要等待结果返回再进行，异步  小结 线程创建 Thread  1234567Thread thread&#x3D;"}</script><link rel="canonical" href="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/"><link rel="icon" href="/hexo_blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/hexo_blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/hexo_blog/">主页</a><a class="navbar-item" href="/hexo_blog/archives">归档</a><a class="navbar-item" href="/hexo_blog/categories">分类</a><a class="navbar-item" href="/hexo_blog/tags">标签</a><a class="navbar-item" href="https://xiaow123.gitee.io/staicpage/html/mine/">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-12T13:37:53.000Z" title="2022-2-12 21:37:53">2022-02-12</time>发表</span><span class="level-item"><time dateTime="2022-02-19T08:59:09.190Z" title="2022-2-19 16:59:09">2022-02-19</time>更新</span><span class="level-item">8 分钟读完 (大约1228个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">juc</h1><div class="content"><h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><p><img src="/hexo_blog/2022/02/12/juc/image-20220212220225601.png" alt="image-20220212220225601"></p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220212220529133.png" alt="image-20220212220529133"></p>
+<h3 id="并行与并发"><a href="#并行与并发" class="headerlink" title="并行与并发"></a>并行与并发</h3><p><strong>并行（parrallel）</strong>：真正同时运行多个任务</p>
+<p><strong>并发（current）</strong>：同一时间应对多个任务，处理多个任务是轮流的，实际上还是串行的，每个进程<strong>轮流占据时间片</strong>，使用cpu，时间片很小，人对此无感</p>
+<p>一般都是既有并行又有并发</p>
+<h3 id="异步调用"><a href="#异步调用" class="headerlink" title="异步调用"></a>异步调用</h3><ul>
+<li>需要等待结果返回再进行，同步</li>
+<li>不需要等待结果返回再进行，异步</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="/hexo_blog/2022/02/12/juc/image-20220214111211433.png" alt="image-20220214111211433"></p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li>Thread</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thread thread=<span class="keyword">new</span> Thread()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    log.info(<span class="string">&quot;thread&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">thread.start();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用Runable配合Thread</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Runnable runnable=<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">           log.debug(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br><span class="line">   Thread thread=<span class="keyword">new</span> Thread(runnable,<span class="string">&quot;t1&quot;</span>);</span><br><span class="line">   thread.start();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>lamda表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Thread thread = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">thread.start();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>FutureTask配合Thread</li>
+</ul>
+<p>可以返回任务的执行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FutureTask futureTask=<span class="keyword">new</span> FutureTask(<span class="keyword">new</span> Callable&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        log.debug(<span class="string">&quot;right&quot;</span>);</span><br><span class="line">        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">Thread thread=<span class="keyword">new</span> Thread(futureTask,<span class="string">&quot;t1&quot;</span>);</span><br><span class="line">thread.start();</span><br><span class="line">System.out.println(futureTask.get());</span><br></pre></td></tr></table></figure>
+
+<p>这里call可以返回结果</p>
+<p>get则是获取该结果，这个过程中，该线程是阻塞的，一直到返回结果之后</p>
+<h3 id="Thread与runable的关系"><a href="#Thread与runable的关系" class="headerlink" title="Thread与runable的关系"></a>Thread与runable的关系</h3><p>二者最终还是走thread的run方法</p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220215121413043.png" alt="image-20220215121413043"></p>
+<p>推荐使用runable，这样可以与线程池配合</p>
+<h3 id="查看进程线程的方法"><a href="#查看进程线程的方法" class="headerlink" title="查看进程线程的方法"></a>查看进程线程的方法</h3><ul>
+<li>windows</li>
+</ul>
+<p>​     tasklist查看进程</p>
+<p>​     taskkill 杀死进程          taskkill  /F /PID 进程id</p>
+<ul>
+<li>linux</li>
+</ul>
+<p>​       ps -fe       列出所有的运行进程信息</p>
+<p>​       ps -fe | grep java 根据java关键字查找所有的进程</p>
+<p>​       kill 进程号</p>
+<p>​       top   动态的方式查看进程的信息</p>
+<p>​       top -H  -p  进程id   查看所有的线程信息</p>
+<ul>
+<li>java</li>
+</ul>
+<p>​      jps   查看进程</p>
+<p>​      jstack 进程号     该进程的所有线程</p>
+<h3 id="查看线程的工具"><a href="#查看线程的工具" class="headerlink" title="查看线程的工具"></a>查看线程的工具</h3><ul>
+<li><p>jconsole</p>
+<p>直接win + R 输入jconsole就可以进入jconsole工具中。</p>
+</li>
+</ul>
+<h3 id="线程运行原理"><a href="#线程运行原理" class="headerlink" title="线程运行原理"></a>线程运行原理</h3><p>每个线程启动后，会分配一个栈，每次方法调用又会生成一个栈帧，线程私有的，因此是线程安全的</p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220218163810518.png" alt="image-20220218163810518"></p>
+<p>栈帧的结构如上</p>
+<h3 id="线程上下文切换（Context-Switch）"><a href="#线程上下文切换（Context-Switch）" class="headerlink" title="线程上下文切换（Context Switch）"></a>线程上下文切换（Context Switch）</h3><p>就是线程切换另一线程运行的过程</p>
+<ul>
+<li>时间片使用结束</li>
+<li>垃圾回收时</li>
+<li>更高优先级线程需要运行</li>
+<li>线程自己调用了sleep，yield，wait，join，park，synchronized，lock等方法</li>
+</ul>
+<p>切换时，操作系统需要保存线程的状态，并恢复另一进程的状态，对应的就是程序计数器，作用就是记住下一条jvm指令的执行地址，线程私有的</p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220218165233636.png" alt="image-20220218165233636"></p>
+<p>线程数过多也不好，一旦超过内核数，就会导致线程切换</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>start（） 启动一个新线程，至于是否运行由任务调度器决定，只可以调用一次start，不可重复调用</p>
+<p>run（）   线程运行时执行的操作</p>
+<p>join（）   等待线程结束   进入阻塞状态</p>
+<p>join(Long d) 设置最大等待时间  </p>
+<p>setPriority（int grade） 设置优先级   </p>
+<p>getState（） 获取线程的状态</p>
+<p>isInterupted（） 判断线程是否被打断</p>
+<p>isAlive（）判断线程是否存活</p>
+<p>interupt（） 打断线程</p>
+<p>currentThread（） 获取当前正在执行的线程</p>
+<p>yield（） 提示线程调度器让出该线程对cpu的占用</p>
+<p>sleep（long n） 线程睡一会    进入阻塞状态</p>
+<h4 id="start与run"><a href="#start与run" class="headerlink" title="start与run"></a>start与run</h4><p>不可以由主线程直接调用run，这样就相当于主线程去跑run了</p>
+<p>不能调用两次start，只可以调用一次</p>
+<h4 id="sleep与yield"><a href="#sleep与yield" class="headerlink" title="sleep与yield"></a>sleep与yield</h4><p><img src="/hexo_blog/2022/02/12/juc/image-20220218170626624.png" alt="image-20220218170626624"></p>
+<h4 id="setPriority（int-grade）-设置优先级"><a href="#setPriority（int-grade）-设置优先级" class="headerlink" title="setPriority（int grade） 设置优先级"></a>setPriority（int grade） 设置优先级</h4><p>数字越大，优先级越高</p>
+<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    Thread thread = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">50</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    thread.start();</span><br><span class="line">    thread.join();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样，主线程就需要等待thread结束之后才可以继续进行</p>
+<p>join（long n） n为最多等待时间</p>
+<h4 id="interrupt"><a href="#interrupt" class="headerlink" title="interrupt"></a>interrupt</h4><p>打断sleep，wait，join的线程</p>
+<p><strong>打断阻塞的线程</strong></p>
+<p>抛出被打断的异常，并且停止运行</p>
+<p>但是当被打断时，线程的打断状态会被置为真，可以通过该种方式停止线程</p>
+<p><strong>打断运行中的线程</strong></p>
+<p>并不会结束线程</p>
+<p>但是当被打断时，线程的打断状态会被置为真，可以通过该种方式停止线程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.interrupted()</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>两阶段终止模式</strong></p>
+<p>在一个线程中优雅的停止另一个线程</p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220219160241895.png" alt="image-20220219160241895"></p>
+<p> 整个过程其实就是，在中断时，给被中断线程一段时间来处理一下需要处理的内容</p>
+<p><img src="/hexo_blog/2022/02/12/juc/image-20220219161728147.png" alt="image-20220219161728147"></p>
+<h3 id="防止cpu占用100"><a href="#防止cpu占用100" class="headerlink" title="防止cpu占用100%"></a>防止cpu占用100%</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">50</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
+
+<p>经常睡眠一下就可以</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>juc</p><p><a href="https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/">https://xiaow123.gitee.io/hexo_blog/2022/02/12/juc/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>xiaow</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-12</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-02-19</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/hexo_blog/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/hexo_blog/img/wechat.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/hexo_blog/2022/02/12/jvm%E7%BB%AD%E9%9B%862/"><span class="level-item">jvm续集2</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "eAQOmVvdKBTqHRuobS1EqWsT-gzGzoHsz",
+            appKey: "l2cLXEXgWc8FIeYcImwr2mXS",
+            placeholder: "发一条评论吧，评论的时候别忘记在上面写上你的名字和邮箱，方便我们联系",
+            
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/hexo_blog/img/123.jpg" alt="XiaoW"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">XiaoW</p><p class="is-size-6 is-block">keep coding keep go on</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>山东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/hexo_blog/archives"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/hexo_blog/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/hexo_blog/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://gitee.com/xiaow123" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gitee.com/xiaow123" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gitee</span></span><span class="level-right"><span class="level-item tag">gitee.com</span></span></a></li><li><a class="level is-mobile" href="https://blog.csdn.net/qq_43627076" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">csdn</span></span><span class="level-right"><span class="level-item tag">blog.csdn.net</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E7%88%AC%E8%99%AB/"><span class="level-start"><span class="level-item">爬虫</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E9%9A%8F%E7%AC%94/"><span class="level-start"><span class="level-item">随笔</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-12T13:37:53.000Z">2022-02-12</time></p><p class="title"><a href="/hexo_blog/2022/02/12/juc/">juc</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-12T12:09:33.000Z">2022-02-12</time></p><p class="title"><a href="/hexo_blog/2022/02/12/jvm%E7%BB%AD%E9%9B%862/">jvm续集2</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-07T04:02:58.000Z">2022-02-07</time></p><p class="title"><a href="/hexo_blog/2022/02/07/%E8%A7%86%E9%A2%91%E5%88%92%E5%88%86%E4%B8%BAts%E7%89%87%E6%AE%B5/">视频划分为ts片段</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-22T08:51:20.000Z">2022-01-22</time></p><p class="title"><a href="/hexo_blog/2022/01/22/jvm%E7%BB%AD%E9%9B%86/">jvm续集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-21T08:00:40.000Z">2022-01-21</time></p><p class="title"><a href="/hexo_blog/2022/01/21/jvm/">jvm</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/Harmony/"><span class="tag">Harmony</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E7%88%AC%E8%99%AB/"><span class="tag">爬虫</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 xiaow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/hexo_blog/js/column.js"></script><script src="/hexo_blog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/hexo_blog/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/hexo_blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/hexo_blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/hexo_blog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
