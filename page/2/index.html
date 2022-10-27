@@ -1,5 +1,173 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>xiaow的博客</title><link rel="manifest" href="/hexo_blog/manifest.json"><meta name="application-name" content="xiaow的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="xiaow的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="个人技术博客"><meta property="og:type" content="blog"><meta property="og:title" content="xiaow的博客"><meta property="og:url" content="https://xiaow123.gitee.io/hexo_blog"><meta property="og:site_name" content="xiaow的博客"><meta property="og:description" content="个人技术博客"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/img/og_image.png"><meta property="article:author" content="xiaow"><meta property="article:tag" content="java,python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/hexo_blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaow123.gitee.io/hexo_blog"},"headline":"xiaow的博客","image":["https://xiaow123.gitee.io/hexo_blog/img/og_image.png"],"author":{"@type":"Person","name":"xiaow"},"publisher":{"@type":"Organization","name":"xiaow的博客","logo":{"@type":"ImageObject","url":"https://xiaow123.gitee.io/img/logo.svg"}},"description":"个人技术博客"}</script><link rel="icon" href="/hexo_blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/hexo_blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/hexo_blog/">主页</a><a class="navbar-item" href="/hexo_blog/archives">归档</a><a class="navbar-item" href="/hexo_blog/categories">分类</a><a class="navbar-item" href="/hexo_blog/tags">标签</a><a class="navbar-item" href="https://xiaow123.gitee.io/staicpage/html/mine/">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-26T10:55:55.000Z" title="2022-7-26 18:55:55">2022-07-26</time>发表</span><span class="level-item"><time dateTime="2022-07-31T03:51:58.090Z" title="2022-7-31 11:51:58">2022-07-31</time>更新</span><span class="level-item">11 分钟读完 (大约1585个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/hexo_blog/2022/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></h1><div class="content"><h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h2><p>可以浅显的认为机器学习，就是在以往数据的基础上，搭建出一个模型，从而预测新数据</p>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>xiaow的博客</title><link rel="manifest" href="/hexo_blog/manifest.json"><meta name="application-name" content="xiaow的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="xiaow的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="个人技术博客"><meta property="og:type" content="blog"><meta property="og:title" content="xiaow的博客"><meta property="og:url" content="https://xiaow123.gitee.io/hexo_blog"><meta property="og:site_name" content="xiaow的博客"><meta property="og:description" content="个人技术博客"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://xiaow123.gitee.io/hexo_blog/img/og_image.png"><meta property="article:author" content="xiaow"><meta property="article:tag" content="java,python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/hexo_blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaow123.gitee.io/hexo_blog"},"headline":"xiaow的博客","image":["https://xiaow123.gitee.io/hexo_blog/img/og_image.png"],"author":{"@type":"Person","name":"xiaow"},"publisher":{"@type":"Organization","name":"xiaow的博客","logo":{"@type":"ImageObject","url":"https://xiaow123.gitee.io/img/logo.svg"}},"description":"个人技术博客"}</script><link rel="icon" href="/hexo_blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/hexo_blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/hexo_blog/">主页</a><a class="navbar-item" href="/hexo_blog/archives">归档</a><a class="navbar-item" href="/hexo_blog/categories">分类</a><a class="navbar-item" href="/hexo_blog/tags">标签</a><a class="navbar-item" href="https://xiaow123.gitee.io/staicpage/html/mine/">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-28T13:31:56.000Z" title="2022-7-28 21:31:56">2022-07-28</time>发表</span><span class="level-item"><time dateTime="2022-09-14T08:57:04.159Z" title="2022-9-14 16:57:04">2022-09-14</time>更新</span><span class="level-item">17 分钟读完 (大约2500个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/hexo_blog/2022/07/28/redis/">redis</a></h1><div class="content"><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>redis并非关系型数据库，而是key-value存储的，有更好的扩展能力</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220728214529699.png" alt="image-20220728214529699"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220728214608969.png" alt="image-20220728214608969"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220728215127482.png" alt="image-20220728215127482"></p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><img src="/hexo_blog/2022/07/28/redis/image-20220728220037037.png" alt="image-20220728220037037"></p>
+<h3 id="后台启动"><a href="#后台启动" class="headerlink" title="后台启动"></a><strong>后台启动</strong></h3><ul>
+<li>redis.conf中的daemonize的值改为yes</li>
+<li>redis-server /etc/redis.conf </li>
+</ul>
+<h3 id="常见指令"><a href="#常见指令" class="headerlink" title="常见指令"></a>常见指令</h3><p>select db：   切换数据库</p>
+<p>dbsize： 查看数据库中的key的数量</p>
+<p>flushdb：清空当前库</p>
+<p>flushall：通杀全部库</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>单线程+多路io复用</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729084841290.png" alt="image-20220729084841290"></p>
+<p>黄牛到火车站买票是单线程的</p>
+<p>而多个游客可以同时去买票</p>
+<p>就是所谓的单线程+多路IO复用</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="/hexo_blog/2022/07/28/redis/image-20220729085441150.png" alt="image-20220729085441150"></p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p><img src="/hexo_blog/2022/07/28/redis/image-20220729085934063.png" alt="image-20220729085934063"></p>
+<h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> key value   设置值 同时可以修改值</span><br><span class="line"></span><br><span class="line">get key              获取值</span><br><span class="line"></span><br><span class="line">append k1 value   追加值</span><br><span class="line"></span><br><span class="line">strlen key     获取长度</span><br><span class="line"></span><br><span class="line">setnx key value    key不存在时设置值，否则失败</span><br><span class="line"></span><br><span class="line">incr key     只能是数字值，加一操作</span><br><span class="line"></span><br><span class="line">decr  key    只能是数字值    减一操作</span><br><span class="line"></span><br><span class="line">incrby key  10    加10  </span><br><span class="line"></span><br><span class="line">decrby key  10   减10 </span><br></pre></td></tr></table></figure>
+
+<p><strong>下面的指令体现原子性，即一个设置失败，全员失败</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mset k1 v1 k2 v2     设置多个kv值</span><br><span class="line"></span><br><span class="line">mget k1 k2           获取多个value</span><br><span class="line"></span><br><span class="line">mset k1 v1 k2 v2     在不存在key的情况下设置多个kv值</span><br><span class="line"></span><br><span class="line">getrange key start end 根据开始位置和结束位置获取内容   类似subString</span><br><span class="line"></span><br><span class="line">setrange key start end 覆写其中内容</span><br><span class="line"></span><br><span class="line">setex  key time  value 设置过期时间</span><br><span class="line">getset key value    设置新值，同时获取旧值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729090754292.png" alt="image-20220729090754292"></p>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p><strong>单键多值</strong></p>
+<p>底层是双向链表。操作两端效率比较高，索引操作效率比较差</p>
+<h4 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lpush/rpush key value value value  从左边或右边插入一个或多个值   两者的区别就在于新加值是在哪一个方向开始添加</span><br><span class="line"></span><br><span class="line">lpop/rpop key 从左边或右边吐出一个值     </span><br><span class="line"></span><br><span class="line">lrange key start end   根据下标获取值    end为-1代表最后的位置</span><br><span class="line">rpoplpush   k1 k2        从k1的右边取出一个值放在k2的左边    可以操作一个列表，从而表头变表尾</span><br><span class="line">lindex key index   获取index下标的元素</span><br><span class="line">llen key  获取列表的长度</span><br><span class="line">linsert key before/after value newvalue   在value的前面或则后面添加newvalue</span><br><span class="line">lrem key n value 从左边删除n个值</span><br><span class="line">lset key index value 将列表中的index处的内容替换为value</span><br><span class="line"> 	 	</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729095241448.png" alt="image-20220729095241448"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729095300059.png" alt="image-20220729095300059"></p>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>可以自动排重</p>
+<p>底层是一个hash表，增删查都是O（1）</p>
+<h4 id="常见指令-1"><a href="#常见指令-1" class="headerlink" title="常见指令"></a>常见指令</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729102244263.png" alt="image-20220729102244263"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729102811388.png" alt="image-20220729102811388"></p>
+<h4 id="数据结构-1"><a href="#数据结构-1" class="headerlink" title="数据结构"></a>数据结构</h4><p>hash表实现的，所有的value都指向同一个值</p>
+<h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><p><img src="/hexo_blog/2022/07/28/redis/image-20220729103856863.png" alt="image-20220729103856863"></p>
+<p><strong>存储方式</strong></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729104633897.png" alt="image-20220729104633897"></p>
+<p>第三种是最好的</p>
+<p>第一种不方便修改值</p>
+<p>第二种数据可能存储的比较分散  </p>
+<h4 id="常见指令-2"><a href="#常见指令-2" class="headerlink" title="常见指令"></a>常见指令</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729104804814.png" alt="image-20220729104804814"></p>
+<h4 id="数据结构-2"><a href="#数据结构-2" class="headerlink" title="数据结构"></a>数据结构</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729105311771.png" alt="image-20220729105311771"></p>
+<h3 id="Zset"><a href="#Zset" class="headerlink" title="Zset"></a>Zset</h3><p>可以说是Set的加强版，这里的元素都是不可重复的，并且每一个元素对应一个score，根据这个score开始排序</p>
+<p>score可以重复，但是元素不能重复</p>
+<p>访问中间元素很快</p>
+<h4 id="常见指令-3"><a href="#常见指令-3" class="headerlink" title="常见指令"></a>常见指令</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729105650672.png" alt="image-20220729105650672">、</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729110043576.png" alt="image-20220729110043576"></p>
+<h4 id="数据结构-3"><a href="#数据结构-3" class="headerlink" title="数据结构"></a>数据结构</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220729111506640.png" alt="image-20220729111506640"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220729111239447.png" alt="image-20220729111239447"></p>
+<p>跳跃表的数据结构如上图所示</p>
+<p>过程 找51：</p>
+<p>与1比较，小，往前推进，比21大，下个节点为空，来到下一层</p>
+<p>41比51小 推进，61比51大，返回41到下一层</p>
+<p>推进找到了51</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h3><p>注释掉   bind 127.0.0.1 -::1</p>
+<p>protected-mode 设置为no</p>
+<h3 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h3><p><img src="/hexo_blog/2022/07/28/redis/image-20220729114106027.png" alt="image-20220729114106027"></p>
+<p>这里发布者有多个频道，此时s1若只是订阅了1频道，当1频道有消息时，s1可以拿到。</p>
+<p>但若是其他频道有消息则不可以</p>
+<h4 id="基本指令-1"><a href="#基本指令-1" class="headerlink" title="基本指令"></a>基本指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel1   订阅频道</span><br><span class="line">publish channel1 hello   发布消息</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="新数据类型"><a href="#新数据类型" class="headerlink" title="新数据类型"></a>新数据类型</h2><h3 id="Bitmaps"><a href="#Bitmaps" class="headerlink" title="Bitmaps"></a>Bitmaps</h3><p>bitmaps本身就是一个字符串，但是是可以进行位操作的字符串</p>
+<h4 id="常见指令-4"><a href="#常见指令-4" class="headerlink" title="常见指令"></a>常见指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setbit key 1 1    <span class="comment">#设置1位置的值为1</span></span><br><span class="line">getbit key 1      <span class="comment">#取出1位置的值</span></span><br><span class="line">bitcount key start end     <span class="comment">#获取key中start到end的1的数量,不设置start和end就默认是整个字符串</span></span><br><span class="line">bitop and（or/not/xor） key1  key2   <span class="comment">#进行交，或，非和异或操作</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h3><p>主要用于基数的计算，类似set</p>
+<h4 id="常见指令-5"><a href="#常见指令-5" class="headerlink" title="常见指令"></a>常见指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pfadd key  value value</span><br><span class="line">pfcount key     <span class="comment">#获取其中基数的数量</span></span><br><span class="line">pfmerge k1 k2 k3   <span class="comment">#将k2，k3合并到k1中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Geospatial"><a href="#Geospatial" class="headerlink" title="Geospatial"></a>Geospatial</h3><p>就是经纬度</p>
+<p>提供了经纬度设置，查询，范围查询，距离查询，经纬度hash等常见操作</p>
+<h4 id="常见指令-6"><a href="#常见指令-6" class="headerlink" title="常见指令"></a>常见指令</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220912092720125.png" alt="image-20220912092720125"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220912092913645.png" alt="image-20220912092913645"></p>
+<h3 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h3><p>java来操作redis</p>
+<h3 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h3><p>redis的事务就是保证所有指令串行进行，不会被其他指令打断</p>
+<h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><p>与之前的机制的相同</p>
+<p>每次操作时，就是直接上锁，其他人不可以操作，当操作结束后，其他人才可以进行操作</p>
+<h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h3><p>这里提到了版本号</p>
+<p>可以同时进行，当一个线程进行完之后，会更新版本号</p>
+<p>另一个线程再进行操作时，如果发现了版本号出现了差别，就会停止操作，即操作失败</p>
+<h3 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h3><h4 id="单独的隔离操作"><a href="#单独的隔离操作" class="headerlink" title="单独的隔离操作"></a>单独的隔离操作</h4><p>所有命令都会序列化进行，不会被其他命令打断</p>
+<h4 id="没有隔离级别的概念"><a href="#没有隔离级别的概念" class="headerlink" title="没有隔离级别的概念"></a>没有隔离级别的概念</h4><p>命令提交前都不会执行</p>
+<h4 id="不保证原子性"><a href="#不保证原子性" class="headerlink" title="不保证原子性"></a>不保证原子性</h4><p>一条命令执行失败，不会回滚</p>
+<h3 id="解决连接超时问题"><a href="#解决连接超时问题" class="headerlink" title="解决连接超时问题"></a>解决连接超时问题</h3><p><strong>连接池</strong></p>
+<h2 id="持久化操作"><a href="#持久化操作" class="headerlink" title="持久化操作"></a>持久化操作</h2><p>在指定的时间间隔内将<strong>数据集快照</strong>写入硬盘中</p>
+<p><strong>写时复制技术：</strong> 复制一个与现在相同的进程，专门用于数据的写入，会先将文件写入到一个临时区域中，然后再写入硬盘中</p>
+<p>父进程与子进程一般使用同一个物理区域，只有内容发生变化时，才会复制给子进程</p>
+<h3 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h3><p>以日志的形式记录写操作</p>
+<p>将redis执行的写指令记录下来，并且日志文件不能修改，只能追加</p>
+<p>redis在启动时会以该日志文件为基础进行恢复</p>
+<p>AOF的优先级较高</p>
+<h4 id="aof文件损坏时"><a href="#aof文件损坏时" class="headerlink" title="aof文件损坏时"></a>aof文件损坏时</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220913105258828.png" alt="image-20220913105258828"></p>
+<h4 id="aof同步频率"><a href="#aof同步频率" class="headerlink" title="aof同步频率"></a>aof同步频率</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220913105327545.png" alt="image-20220913105327545"></p>
+<h4 id="压缩（重写）"><a href="#压缩（重写）" class="headerlink" title="压缩（重写）"></a>压缩（重写）</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220913105642278.png" alt="image-20220913105642278"></p>
+<p>将上面的两个操作合并为一个操作</p>
+<h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><p><img src="/hexo_blog/2022/07/28/redis/image-20220913184926067.png" alt="image-20220913184926067"></p>
+<p>有一个是主服务，其他都是从服务，从服务复制主服务中的数据</p>
+<p>master/slave机制    master以写为主，slave以读为主</p>
+<ul>
+<li>主写数据，从读数据</li>
+<li>容灾快速恢复  有一个从机挂掉了，其他从机顶上</li>
+<li>一主多从</li>
+</ul>
+<h3 id="基本指令-2"><a href="#基本指令-2" class="headerlink" title="基本指令"></a>基本指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info replication     <span class="comment">#查看是否为主机</span></span><br><span class="line">slaveof ip port      <span class="comment">#设置为ip上port端口运行redis的从机</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h4 id="一主两仆"><a href="#一主两仆" class="headerlink" title="一主两仆"></a>一主两仆</h4><p>即使一个从服务器挂掉，当在启动时，也会完整复制主服务器中的所有数据</p>
+<p>当主服务器挂掉之后，仍然是主服务器，两个从服务器不会做任何操作</p>
+<h4 id="复制原理"><a href="#复制原理" class="headerlink" title="复制原理"></a>复制原理</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220913195559285.png" alt="image-20220913195559285"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220913195616924.png" alt="image-20220913195616924"></p>
+<h4 id="薪火相传"><a href="#薪火相传" class="headerlink" title="薪火相传"></a>薪火相传</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220913195814300.png" alt="image-20220913195814300"></p>
+<ul>
+<li>主服务器连接的还是只有两台从服务器</li>
+<li>但每一台从服务器下仍链接了两台服务器</li>
+<li>这样依次向下传递，即除了第一层之外，所有服务器既是下一层的主服务器，也是上一层的从服务器</li>
+</ul>
+<h4 id="反客为主"><a href="#反客为主" class="headerlink" title="反客为主"></a>反客为主</h4><p>主服务器挂掉了，从服务器可以立即顶上主服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof no one     <span class="comment">#当主服务器挂掉之后，直接替代主服务器		</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sentinel monitor mymaster 127.0.0.1 6379 1     <span class="comment">#设置监视6379端口的哨兵       只要有一个从服务器同意就可以变成主服务器</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>怎么选择哪一个更新为主服务器</strong></p>
+<ul>
+<li>redis.conf 中的replica-priority   值越小优先级越高</li>
+</ul>
+<p>当主服务器从新启动之后也是从服务器了，不再是主服务器</p>
+<p><strong>java代码</strong></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220913202720188.png" alt="image-20220913202720188"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220913202739702.png" alt="image-20220913202739702"></p>
+<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><p><img src="/hexo_blog/2022/07/28/redis/image-20220913203418344.png" alt="image-20220913203418344"></p>
+<p>代理主机就类似于反向代理，由一台服务器代理所有的redis服务，即所有请求先需要通过代理服务器</p>
+<p>无中心化集群</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220913203948274.png" alt="image-20220913203948274"></p>
+<p>任何一个redis服务都可以作为redis服务的入口</p>
+<p>并且各个redis服务之间可以互相通信</p>
+<ul>
+<li>实现了redis的水平扩容，每个节点可以存储其中一部分</li>
+<li>提供一定程度的可用性，当一些服务出现问题时，其他服务仍可以工作</li>
+</ul>
+<h3 id="合体"><a href="#合体" class="headerlink" title="合体"></a>合体</h3><p>打开/mydata/redis/src的文件夹，然后执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --cluster create --cluster-replicas 1 192.168.183.132:6379 192.168.183.132:6380 192.168.183.132:6381 192.168.183.132:6382 192.168.183.132:6383 192.168.183.132:6385</span><br></pre></td></tr></table></figure>
+
+<p>在replicas后的1代表以最简单的方式搭建集群，即一个主机一个从机，这样刚好三组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis -c -p 6379   <span class="comment">#-c就代表以集群方式连接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="redis如何分配节点"><a href="#redis如何分配节点" class="headerlink" title="redis如何分配节点"></a>redis如何分配节点</h3><p>尽量保证每个主数据库在不同ip，每个从库和主库不在同一个ip</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220914155112679.png" alt="image-20220914155112679"></p>
+<p>也就是需要查询的数据多不在redis中，需要每次都访问数据库，因此出现了缓存穿透</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220914155307974.png" alt="image-20220914155307974"></p>
+<h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220914160000230.png" alt="image-20220914160000230"></p>
+<p>出现场景</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220914160058198.png" alt="image-20220914160058198"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220914160106743.png" alt="image-20220914160106743"></p>
+<h4 id="雪崩"><a href="#雪崩" class="headerlink" title="雪崩"></a>雪崩</h4><p><img src="/hexo_blog/2022/07/28/redis/image-20220914160547707.png" alt="image-20220914160547707"></p>
+<p>解决方法</p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220914160736813.png" alt="image-20220914160736813"></p>
+<p><img src="/hexo_blog/2022/07/28/redis/image-20220914161021806.png" alt="image-20220914161021806"></p>
+<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setnx user 123     <span class="comment">#上锁的方式设置值，未释放锁之前，其他人不可以操作</span></span><br><span class="line">del user    <span class="comment">#释放锁</span></span><br><span class="line"><span class="built_in">set</span> user 123 nx ex 12     <span class="comment">#设置值的同时设置过期时间</span></span><br></pre></td></tr></table></figure>
+
+<p>防止锁长期不解锁，可以对上锁的对象设置过期时间，当过期之后，锁就没了</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-26T10:55:55.000Z" title="2022-7-26 18:55:55">2022-07-26</time>发表</span><span class="level-item"><time dateTime="2022-07-31T03:51:58.090Z" title="2022-7-31 11:51:58">2022-07-31</time>更新</span><span class="level-item">11 分钟读完 (大约1585个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/hexo_blog/2022/07/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></h1><div class="content"><h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h2><p>可以浅显的认为机器学习，就是在以往数据的基础上，搭建出一个模型，从而预测新数据</p>
 <h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><h3 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h3><p>特征值+目标值</p>
 <h2 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>目标值为离散型的数据</p>
 <h3 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h3><p>目标值为连续型的数据</p>
@@ -245,212 +413,7 @@
 
 <p>这里的</p>
 <p>-v 就是挂载目录 </p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-25T16:24:00.000Z" title="2022-4-26 0:24:00">2022-04-26</time>发表</span><span class="level-item"><time dateTime="2022-04-25T16:24:00.090Z" title="2022-4-26 0:24:00">2022-04-26</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-20T08:25:41.000Z" title="2022-4-20 16:25:41">2022-04-20</time>发表</span><span class="level-item"><time dateTime="2022-06-05T15:43:48.755Z" title="2022-6-5 23:43:48">2022-06-05</time>更新</span><span class="level-item">15 分钟读完 (大约2194个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/">推荐系统</a></h1><div class="content"><h1 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="基于人口学的推荐算法"><a href="#基于人口学的推荐算法" class="headerlink" title="基于人口学的推荐算法"></a>基于人口学的推荐算法</h3><p>就是将不同的人进行分类，相同类别的人被认为是有着相同的兴趣爱好</p>
-<h3 id="基于内容的推荐算法"><a href="#基于内容的推荐算法" class="headerlink" title="基于内容的推荐算法"></a>基于内容的推荐算法</h3><p>根据电影的内容对电影进行分类，依据这个分类推荐电影</p>
-<h3 id="基于协同过滤的推荐"><a href="#基于协同过滤的推荐" class="headerlink" title="基于协同过滤的推荐"></a>基于协同过滤的推荐</h3><h2 id="机器学习分类"><a href="#机器学习分类" class="headerlink" title="机器学习分类"></a>机器学习分类</h2><h3 id="有监督学习"><a href="#有监督学习" class="headerlink" title="有监督学习"></a>有监督学习</h3><p>提供数据以及结果的学习过程</p>
-<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>提供数据但不提供结果</p>
-<h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><p>通过与环境交互并获取延迟返回而改进行为的过程</p>
-<h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220430001546166.png" alt="image-20220430001546166"></p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220430001714584.png" alt="image-20220430001714584"></p>
-<h3 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3><p>模型：总结数据的内在规律，用数学函数描述的系统</p>
-<p>策略：选取最优模型的评价准则</p>
-<p>算法：选取最优模型的具体方法</p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220430003058022.png" alt="image-20220430003058022"></p>
-<h3 id="模型评估策略"><a href="#模型评估策略" class="headerlink" title="模型评估策略"></a>模型评估策略</h3><h4 id="训练集和测试集"><a href="#训练集和测试集" class="headerlink" title="训练集和测试集"></a>训练集和测试集</h4><p>训练模型的称为训练集</p>
-<p>测试模型的称为测试集</p>
-<p>有一种设计方式：<strong>首先训练集输入到模型中，形成模型，然后可以将相同的训练集输入模型中，从而判断模型的的训练效果</strong></p>
-<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>衡量模型预测误差的大小</p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220430004527651.png" alt="image-20220430004527651"></p>
-<img src="推荐系统/image-20220430004923966.png" alt="image-20220430004923966" style="zoom:50%;" />
-
-<h4 id="经验风险"><a href="#经验风险" class="headerlink" title="经验风险"></a>经验风险</h4><p>平均损失称为经验风险</p>
-<img src="推荐系统/image-20220430005122372.png" alt="image-20220430005122372" style="zoom:50%;" />
-
-<h4 id="训练误差"><a href="#训练误差" class="headerlink" title="训练误差"></a>训练误差</h4><p>训练集的平均损失</p>
-<h4 id="测试误差"><a href="#测试误差" class="headerlink" title="测试误差"></a>测试误差</h4><p>测试集的平均损失</p>
-<h4 id="过拟合和欠拟合"><a href="#过拟合和欠拟合" class="headerlink" title="过拟合和欠拟合"></a>过拟合和欠拟合</h4><p>以树叶为例：</p>
-<p>过拟合：认为符合特例的所有的特征才能被称为树叶，学习的过度了，就例如认为只有带有的锯齿的树叶才是树叶，就是学习的过度了，这就要求训练集应当多元化。</p>
-<p>欠拟合：认为符合特例的一个特性就可以称为树叶，学习较为欠缺，例如学习之后认为绿色的就是叶子，就是学习太欠缺了。</p>
-<img src="推荐系统/image-20220430005917478.png" alt="image-20220430005917478" style="zoom:50%;" />
-
-<h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><p>为了防止过拟合提出的策略</p>
-<h3 id="分类与回归"><a href="#分类与回归" class="headerlink" title="分类与回归"></a>分类与回归</h3><p>分类：预测数据是离散的</p>
-<p>连续：预测数据是连续的</p>
-<p>监督学习从数据中学习一个分类模型或分类决策函数，称为分类器，分类器对新的玉树进入预测称为分类</p>
-<h4 id="精确率和召回率"><a href="#精确率和召回率" class="headerlink" title="精确率和召回率"></a>精确率和召回率</h4><p>评级分类器性能的指标一般是分类准确率，定义为对测试集正确的样本数和总样本数之比</p>
-<ul>
-<li>对于二类分类问题，常用的评价指标是精确率和召回率</li>
-<li>通常关注的类为正类，不关注的为负类<ul>
-<li>TP 将正类预测为正类的数目</li>
-<li>FN 将正类预测为负类的的数目</li>
-<li>FP  负类预测为正类的数目</li>
-<li>TN 负类预测为负类的数目</li>
-</ul>
-</li>
-</ul>
-<p>例如在推荐系统中，应该推荐的就是正类，不该推荐的就是负类</p>
-<p><strong>精确率</strong></p>
-<p>TP/（TP+FP）</p>
-<p>就是推荐中的正确的所在比例</p>
-<p><strong>召回率</strong></p>
-<p>TP/（TP+FN）</p>
-<p>正类中成功被预测的比例</p>
-<h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><p><strong>分类</strong></p>
-<ul>
-<li>未知数的个数：一元回归和多元回归</li>
-<li>模型分类：线性回归和非线性回归</li>
-</ul>
-<p>回归学习的损失函数：</p>
-<ul>
-<li>平方损失函数</li>
-<li>梯度下降算法：<ul>
-<li>梯度方向：函数变化增长最快的方向</li>
-<li>负梯度方向：函数变化减少最快的方向</li>
-<li>沿着负梯度方向不断变化，知道求到最小的损失值</li>
-</ul>
-</li>
-</ul>
-<h2 id="机器学习模型"><a href="#机器学习模型" class="headerlink" title="机器学习模型"></a>机器学习模型</h2><h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p>x与y存在线性关系</p>
-<p>例如y=ax+b</p>
-<p>F(x)=ax1+bx2+cx3……….</p>
-<p>就是看自变量是不是最高一次幂，若是的话，则说明是线性的</p>
-<h4 id="最小二乘法（误差损失函数）"><a href="#最小二乘法（误差损失函数）" class="headerlink" title="最小二乘法（误差损失函数）"></a>最小二乘法（误差损失函数）</h4><p>来评估模型是否符合</p>
-<p>其实就是判断实际的点到我们的模型公式距离的总和，求出最小的值，来求出最优的模型</p>
-<h3 id="一元线性回归的公式"><a href="#一元线性回归的公式" class="headerlink" title="一元线性回归的公式"></a>一元线性回归的公式</h3><img src="推荐系统/image-20220501140516452.png" alt="image-20220501140516452" style="zoom: 33%;" />
-
-<h3 id="多元线性回归的公式"><a href="#多元线性回归的公式" class="headerlink" title="多元线性回归的公式"></a>多元线性回归的公式</h3><img src="推荐系统/image-20220501153622118.png" alt="image-20220501153622118" style="zoom:50%;" />
-
-<h4 id="梯度下降法求解线性回归"><a href="#梯度下降法求解线性回归" class="headerlink" title="梯度下降法求解线性回归"></a>梯度下降法求解线性回归</h4><p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220513230307510.png" alt="image-20220513230307510"></p>
-<p>以上是公式，这里的<strong>谁他</strong>和x都是向量</p>
-<p>谁他就是自变量旁边那个</p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220513230450143.png" alt="image-20220513230450143"></p>
-<p>下面介绍一下公式的原理</p>
-<p>其实就是将函数值减去真实值，将这些差的平法加起来然后求平均，因为各个点的坐标都是知道的，这时候哪些参数就是自变量，对这些参数求偏导即可</p>
-<p><strong>梯度不懂？</strong></p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220513231543011.png" alt="image-20220513231543011"></p>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><p>k个最接近的邻居，即若一个样本在特征空间中k个最相似的样本的大多数都属于一个类别，这个样本也属于这个类别</p>
-<p>选择的邻居都是已分类的</p>
-<p>k一般选奇数</p>
-<p>knn的结果很大程度取决于k的选择</p>
-<img src="推荐系统/image-20220530195525588.png" alt="image-20220530195525588" style="zoom: 33%;" />
-
-
-
-<p>两个计算公式中的x与y可能不只是两个数，可能是两个向量</p>
-<p>knn算法详情</p>
-<img src="推荐系统/image-20220530195922818.png" alt="image-20220530195922818" style="zoom:33%;" />
-
-
-
-<h3 id="逻辑斯蒂回归"><a href="#逻辑斯蒂回归" class="headerlink" title="逻辑斯蒂回归"></a>逻辑斯蒂回归</h3><img src="推荐系统/image-20220531101452242.png" alt="image-20220531101452242" style="zoom:33%;" />
-
-<p>其实就是找分界线</p>
-<img src="推荐系统/image-20220531101808050.png" alt="image-20220531101808050" style="zoom:33%;" />
-
-
-
-
-
-<img src="推荐系统/image-20220531102510865.png" alt="image-20220531102510865" style="zoom:33%;" />
-
-<p>上图是压缩函数的应用，将xy轴认为是x1，x2，找出x1与x2的关系，即图中的绿线，为f，f&gt;0时，带入压缩函数，刚好可以接近一，</p>
-<p>反之一样，下图是另一个使用实例</p>
-<img src="推荐系统/image-20220531103658121.png" alt="image-20220531103658121" style="zoom:33%;" />
-
-<h4 id="损失函数-1"><a href="#损失函数-1" class="headerlink" title="损失函数"></a>损失函数</h4><img src="推荐系统/image-20220531110325804.png" alt="image-20220531110325804" style="zoom:33%;" />
-
-<p>损失函数借用以上图像，这里hx是预测值，y是实际值</p>
-<img src="推荐系统/image-20220531134652126.png" alt="image-20220531134652126" style="zoom:33%;" />
-
-
-
-<p>下面是损失函数的公式，我认为后面有问题，应该是y-1</p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220531135038004.png" alt="image-20220531135038004"></p>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220531135025168.png" alt="image-20220531135025168"></p>
-<p>前面两图直接蒙了</p>
-<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><img src="推荐系统/image-20220531154748795.png" alt="image-20220531154748795" style="zoom:33%;" />
-
-<img src="推荐系统/image-20220531155327365.png" alt="image-20220531155327365" style="zoom:33%;" />
-
-<h4 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h4><p>根据哪个特征来划分特征空间</p>
-<h4 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h4><p>M可以等于1，也可以等于2，M就是随机变量</p>
-<img src="推荐系统/image-20220531160140153.png" alt="image-20220531160140153" style="zoom:33%;" />
-
-<p>熵越小，不确定越小，决策树的选择应当是熵越来越小</p>
-<h2 id="无监督学习-1"><a href="#无监督学习-1" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>聚类</strong></p>
-<ul>
-<li>k均值</li>
-<li>基于密度的聚类</li>
-<li>最大期望聚类</li>
-</ul>
-<p>降维</p>
-<ul>
-<li>潜语义分析</li>
-<li>主成分分析</li>
-<li>奇异值分解</li>
-</ul>
-<h3 id="K均值（k就是聚类的数量）"><a href="#K均值（k就是聚类的数量）" class="headerlink" title="K均值（k就是聚类的数量）"></a>K均值（k就是聚类的数量）</h3><p>随机指定两个中心点，或在已知的两个点中选择两个点</p>
-<p>然后基于KNN进行分类</p>
-<p>更新中心点，在分类好的两个分类中分别找一个质心点，在进行KNN</p>
-<p>依次这样迭代，当质心点不再变化或到达迭代次数最大值时就停止迭代</p>
-<h1 id="推荐系统项目"><a href="#推荐系统项目" class="headerlink" title="推荐系统项目"></a>推荐系统项目</h1><h2 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h2><p>一般常用的是余弦相似度</p>
-<img src="推荐系统/image-20220604130015828.png" alt="image-20220604130015828" style="zoom:33%;" />
-
-<p><strong>为什么使用余弦相似度？</strong></p>
-<h2 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h2><p>数据中抽取出的对结果预测有用的信息</p>
-<p>特征的个数就是数据的观测维度</p>
-<h2 id="数值型特征处理"><a href="#数值型特征处理" class="headerlink" title="数值型特征处理"></a>数值型特征处理</h2><h3 id="归一化-幅度调整"><a href="#归一化-幅度调整" class="headerlink" title="归一化/幅度调整"></a>归一化/幅度调整</h3><ul>
-<li>特征之间应是平等的，区别应体现特征内部</li>
-<li>可做幅度调整，其实就是让各特征的取值应差不多，公式如下</li>
-</ul>
-<p><img src="/hexo_blog/2022/04/20/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/image-20220605093922265.png" alt="image-20220605093922265"></p>
-<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><ul>
-<li>等步长  实时性比较高</li>
-<li>等频      准确性比较高</li>
-</ul>
-<h2 id="类别型特征处理"><a href="#类别型特征处理" class="headerlink" title="类别型特征处理"></a>类别型特征处理</h2><p>做到公平，并且要区分开他们</p>
-<h3 id="One-hot编码-哑变量"><a href="#One-hot编码-哑变量" class="headerlink" title="One-hot编码/哑变量"></a>One-hot编码/哑变量</h3><img src="推荐系统/image-20220605094855717.png" alt="image-20220605094855717" style="zoom:33%;" />
-
-<h2 id="时间型特征处理"><a href="#时间型特征处理" class="headerlink" title="时间型特征处理"></a>时间型特征处理</h2><h3 id="连续值"><a href="#连续值" class="headerlink" title="连续值"></a>连续值</h3><ul>
-<li>持续时间</li>
-<li>间隔时间</li>
-</ul>
-<h3 id="离散值"><a href="#离散值" class="headerlink" title="离散值"></a>离散值</h3><ul>
-<li>一天的那几个时间段</li>
-<li>星期几</li>
-<li>月/星期</li>
-<li>工作日/周末</li>
-</ul>
-<h2 id="统计型特征处理"><a href="#统计型特征处理" class="headerlink" title="统计型特征处理"></a>统计型特征处理</h2><ul>
-<li>加减平均</li>
-<li>分位线</li>
-<li>次序性</li>
-<li>比例类</li>
-</ul>
-<h2 id="基于UGC的推荐"><a href="#基于UGC的推荐" class="headerlink" title="基于UGC的推荐"></a>基于UGC的推荐</h2><p>UGC 用户生成标签，反应用户兴趣的重要数据源</p>
-<img src="推荐系统/image-20220605095652424.png" alt="image-20220605095652424" style="zoom:50%;" />
-
-<h2 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h2><p>词频-逆文档频率</p>
-<img src="推荐系统/image-20220605100936708.png" alt="image-20220605100936708" style="zoom:50%;" />
-
-<p>TF是词频    <strong>词出现的次数/总词数</strong></p>
-<p>IDF随着词在所有的文章中出现频率的增加而下降</p>
-<img src="推荐系统/image-20220605101216846.png" alt="image-20220605101216846" style="zoom: 50%;" />
-
-<h2 id="CF-基于协同过滤"><a href="#CF-基于协同过滤" class="headerlink" title="CF 基于协同过滤"></a>CF 基于协同过滤</h2><h3 id="基于近邻的推荐"><a href="#基于近邻的推荐" class="headerlink" title="基于近邻的推荐"></a>基于近邻的推荐</h3><img src="推荐系统/image-20220605195308277.png" alt="image-20220605195308277" style="zoom: 50%;" />
-
-<h3 id="基于模型的协同过滤"><a href="#基于模型的协同过滤" class="headerlink" title="基于模型的协同过滤"></a>基于模型的协同过滤</h3><img src="推荐系统/image-20220605200123119.png" alt="image-20220605200123119" style="zoom:50%;" />
-
-<h4 id="LFM降维方法，矩阵因子分解"><a href="#LFM降维方法，矩阵因子分解" class="headerlink" title="LFM降维方法，矩阵因子分解"></a>LFM降维方法，矩阵因子分解</h4><p>如下图所示，可以认为P的行向量是用户是否喜欢哪一类电影的数值</p>
-<p>Q的列向量则是一个电影所含的类别</p>
-<img src="推荐系统/image-20220605201929950.png" alt="image-20220605201929950" style="zoom:50%;" />
-
-<h4 id="损失函数-2"><a href="#损失函数-2" class="headerlink" title="损失函数"></a>损失函数</h4><p><strong>平方损失函数</strong></p>
-<p>需要加入正则项，防止过拟合</p>
-<h4 id="ALS"><a href="#ALS" class="headerlink" title="ALS"></a>ALS</h4><p>交替最小二乘法</p>
-<p>两个矩阵P，Q,先随机指定一个矩阵的值，然后再求另一个矩阵的值，然后在使用求出的矩阵的值再求另一个矩阵的值</p>
-<p>反复迭代，直到阈值到了或则达到了损失函数收敛</p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/hexo_blog/">上一页</a></div><div class="pagination-next"><a href="/hexo_blog/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/hexo_blog/">1</a></li><li><a class="pagination-link is-current" href="/hexo_blog/page/2/">2</a></li><li><a class="pagination-link" href="/hexo_blog/page/3/">3</a></li><li><a class="pagination-link" href="/hexo_blog/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/hexo_blog/img/123.jpg" alt="XiaoW"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">XiaoW</p><p class="is-size-6 is-block">keep coding keep go on</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>山东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/hexo_blog/archives"><p class="title">33</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/hexo_blog/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/hexo_blog/tags"><p class="title">12</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://gitee.com/xiaow123" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gitee.com/xiaow123" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gitee</span></span><span class="level-right"><span class="level-item tag">gitee.com</span></span></a></li><li><a class="level is-mobile" href="https://blog.csdn.net/qq_43627076" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">csdn</span></span><span class="level-right"><span class="level-item tag">blog.csdn.net</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E7%88%AC%E8%99%AB/"><span class="level-start"><span class="level-item">爬虫</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E9%9A%8F%E7%AC%94/"><span class="level-start"><span class="level-item">随笔</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-23T13:52:41.000Z">2022-10-23</time></p><p class="title"><a href="/hexo_blog/2022/10/23/%E8%9E%8D%E5%90%88%E5%9B%BE%E5%83%8F%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/">融合图像评价指标</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-04T13:03:11.000Z">2022-10-04</time></p><p class="title"><a href="/hexo_blog/2022/10/04/%E6%B0%B4%E4%B8%8B%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%8C%96%E5%92%8C%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6-%E7%AC%94%E8%AE%B0/">水下图像清晰化和目标识别技术研究 笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-30T09:21:41.000Z">2022-09-30</time></p><p class="title"><a href="/hexo_blog/2022/09/30/%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E7%AE%97%E6%B3%95%E6%B1%87%E6%80%BB/">特征提取算法汇总</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-30T08:42:47.000Z">2022-09-30</time></p><p class="title"><a href="/hexo_blog/2022/09/30/SVM/">SVM</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-21T01:13:21.000Z">2022-09-21</time></p><p class="title"><a href="/hexo_blog/2022/09/21/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-1/">深度学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/archives/2022/10/"><span class="level-start"><span class="level-item">十月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/04/"><span class="level-start"><span class="level-item">四月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/Harmony/"><span class="tag">Harmony</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/nginx/"><span class="tag">nginx</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><span class="tag">人工智能</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E5%AE%89%E5%85%A8/"><span class="tag">安全</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="tag">深度学习</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E7%88%AC%E8%99%AB/"><span class="tag">爬虫</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="tag">神经网络</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"><span class="tag">论文阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"><span class="tag">论文阅读笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 xiaow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-25T16:24:00.000Z" title="2022-4-26 0:24:00">2022-04-26</time>发表</span><span class="level-item"><time dateTime="2022-04-25T16:24:00.090Z" title="2022-4-26 0:24:00">2022-04-26</time>更新</span><span class="level-item">几秒读完 (大约0个字)</span></div></div><div class="content"></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/hexo_blog/">上一页</a></div><div class="pagination-next"><a href="/hexo_blog/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/hexo_blog/">1</a></li><li><a class="pagination-link is-current" href="/hexo_blog/page/2/">2</a></li><li><a class="pagination-link" href="/hexo_blog/page/3/">3</a></li><li><a class="pagination-link" href="/hexo_blog/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/hexo_blog/img/123.jpg" alt="XiaoW"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">XiaoW</p><p class="is-size-6 is-block">keep coding keep go on</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>山东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/hexo_blog/archives"><p class="title">34</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/hexo_blog/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/hexo_blog/tags"><p class="title">12</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://gitee.com/xiaow123" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://gitee.com/xiaow123" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gitee</span></span><span class="level-right"><span class="level-item tag">gitee.com</span></span></a></li><li><a class="level is-mobile" href="https://blog.csdn.net/qq_43627076" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">csdn</span></span><span class="level-right"><span class="level-item tag">blog.csdn.net</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E7%88%AC%E8%99%AB/"><span class="level-start"><span class="level-item">爬虫</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/categories/%E9%9A%8F%E7%AC%94/"><span class="level-start"><span class="level-item">随笔</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-27T01:56:52.000Z">2022-10-27</time></p><p class="title"><a href="/hexo_blog/2022/10/27/%E4%BC%98%E5%8C%96%E5%99%A8/">优化器</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-23T13:52:41.000Z">2022-10-23</time></p><p class="title"><a href="/hexo_blog/2022/10/23/%E8%9E%8D%E5%90%88%E5%9B%BE%E5%83%8F%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/">融合图像评价指标</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-04T13:03:11.000Z">2022-10-04</time></p><p class="title"><a href="/hexo_blog/2022/10/04/%E6%B0%B4%E4%B8%8B%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%8C%96%E5%92%8C%E7%9B%AE%E6%A0%87%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6-%E7%AC%94%E8%AE%B0/">水下图像清晰化和目标识别技术研究 笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-30T09:21:41.000Z">2022-09-30</time></p><p class="title"><a href="/hexo_blog/2022/09/30/%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E7%AE%97%E6%B3%95%E6%B1%87%E6%80%BB/">特征提取算法汇总</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-30T08:42:47.000Z">2022-09-30</time></p><p class="title"><a href="/hexo_blog/2022/09/30/SVM/">SVM</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo_blog/archives/2022/10/"><span class="level-start"><span class="level-item">十月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/04/"><span class="level-start"><span class="level-item">四月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo_blog/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/Harmony/"><span class="tag">Harmony</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/nginx/"><span class="tag">nginx</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><span class="tag">人工智能</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E5%AE%89%E5%85%A8/"><span class="tag">安全</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="tag">深度学习</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E7%88%AC%E8%99%AB/"><span class="tag">爬虫</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="tag">神经网络</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"><span class="tag">论文阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"><span class="tag">论文阅读笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo_blog/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/hexo_blog/"><img src="/hexo_blog/img/logo.svg" alt="xiaow的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 xiaow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
